@@ -27,7 +27,7 @@ $(function () {
           nameEn: 'Baidu Cloud Disk',
           img:'assets/img/store/bd_cloud.png',
           ok: true,
-          url: 'https://pan.baidu.com/s/1lbTymQiKY_5KkABaMFTZ_A?pwd=pzd7'
+          url: 'https://pan.baidu.com/s/16525pNlkh4xsIphzomWsmQ?pwd=viir'
         },
         {
           visible: false,
@@ -43,15 +43,15 @@ $(function () {
           nameEn: '123 Cloud Disk',
           img:'assets/img/store/123.ico',
           ok: true,
-          url: 'https://www.123pan.com/s/4CQmjv-7uvGA.html'
+          url: 'https://www.123pan.com/s/4CQmjv-oUvGA.html'
         },
         {
-          visible: false,
+          visible: true,
           name: '普通下载',
           nameEn: 'Web Download',
           img:'assets/img/logo_192.png',
-          ok: false,
-          url: ''
+          ok: true,
+          url: './apk/pc_1.1.0_2_23.10.20.apk'
         }
       ],
       isEn: false,
