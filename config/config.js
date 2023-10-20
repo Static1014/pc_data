@@ -4,7 +4,8 @@ const config = {
   authorEn: 'Static4u',
   email: '420048248@qq.com',
   pc: {
-    site: 'https://static1014.github.io/pc_data/post_creator/'
+    // site: 'https://static1014.github.io/pc_data/post_creator/'
+    site: 'https://pcc.homedot.space/post_creator/'
   },
 }
 
