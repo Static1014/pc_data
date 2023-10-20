@@ -1,0 +1,68 @@
+@keyframes collapseAnim {
+  0% {
+    width: 100%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 0; } }
+@-webkit-keyframes collapseAnim {
+  0% {
+    width: 100%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 0; } }
+@keyframes circle {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+@-webkit-keyframes circle {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+.input-number {
+  position: relative;
+  height: 22px;
+  display: flex;
+  justify-content: end;
+  -webkit-justify-content: flex-end;
+  align-items: center; }
+  .input-number .label {
+    color: #333333;
+    display: inline-block;
+    margin-right: 8px; }
+  .input-number .action {
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    -webkit-justify-content: flex-end;
+    align-items: center;
+    border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #d5d5d5; }
+    .input-number .action .minus, .input-number .action .add {
+      line-height: 22px;
+      text-align: center;
+      width: 26px;
+      height: 22px;
+      font-size: 14px;
+      cursor: pointer; }
+    .input-number .action .count {
+      width: 60px;
+      text-align: center;
+      line-height: 22px;
+      font-size: 14px;
+      border-radius: 0;
+      border-right: 1px solid #d5d5d5;
+      border-left: 1px solid #d5d5d5; }
+    .input-number .action .zero {
+      width: 60px;
+      text-align: center;
+      line-height: 22px;
+      font-size: 14px;
+      border-right: 1px solid #d5d5d5;
+      border-left: 1px solid #d5d5d5; }
+
+/*# sourceMappingURL=index.css.map */

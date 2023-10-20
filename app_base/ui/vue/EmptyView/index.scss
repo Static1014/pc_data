@@ -1,0 +1,26 @@
+@import "../../../css/mixin";
+
+$size-empty-icon: 80px;
+
+.empty-view {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: $color-bg;
+  @include flex(column, center, center);
+
+  .e-icon {
+    width: $size-empty-icon;
+    height: $size-empty-icon;
+    margin-bottom: 20px;
+  }
+
+  .e-msg {
+    font-size: $font-size-base;
+    color: $font-color-sub;
+    text-align: center;
+    margin: 0 $margin-horizontal 20px;
+  }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--safari主题色-->
+  <meta name="theme-color" content="#61C0BF">
+  <!--safari主题色，暗黑模式-->
+  <!--<meta name="theme-color" content="#61C0BF" media="(prefers-color-scheme: light)">-->
+  <!--<meta name="theme-color" content="#61C0BF" media="(prefers-color-scheme: dark)">-->
+  <title>图创</title>
+  <script type="text/javascript" src="../config/config.js"></script>
+  <link rel="shortcut icon" href="assets/img/favicon.ico">
+  <link rel="stylesheet" href="../app_base/css/reset.css">
+  <link rel="stylesheet" href="../app_base/css/style.css">
+  <link rel="stylesheet" href="../homedot/index.css">
+  <link rel="stylesheet" href="index.css">
+  <script type="text/javascript" src="../app_base/libs/jquery.min.js"></script>
+  <script type="text/javascript" src="../app_base/libs/vue.min.js"></script>
+  <script type="text/javascript" src="../app_base/js/app_config.js"></script>
+  <script type="text/javascript" src="../app_base/js/commonUtils.js"></script>
+</head>
+<body>
+<div class="container" id="vue_id" v-cloak>
+  <div class="content">
+    <section id="top">
+      <img id="logo" src="assets/img/logo_192.png" alt="logo">
+      <h1>{{name}} {{version}}</h1>
+      <div class="lang" @click="clickLang">
+        <span :class="['zh', isEn?'':'selected']">中文</span> / <span :class="['en', isEn?'selected':'']">English</span>
+      </div>
+      <div class="policy" @click="clickPolicy">{{isEn ? 'Privacy Policy' : '隐私政策'}}</div>
+    </section>
+    <section id="box-intro">
+      <div class="intro">
+        <img :src="'assets/img/intro/'+(isEn?'en':'zh')+'/1.png'" alt="intro">
+        <img :src="'assets/img/intro/'+(isEn?'en':'zh')+'/2.png'" alt="intro">
+        <img :src="'assets/img/intro/'+(isEn?'en':'zh')+'/3.png'" alt="intro">
+        <img :src="'assets/img/intro/'+(isEn?'en':'zh')+'/4.png'" alt="intro">
+      </div>
+    </section>
+    <section id="download" v-if="dlVisible">
+      <h3>{{isEn ? 'Download' : '下载地址'}}</h3>
+      <br>
+      <div :class="['btn_download', item.ok?'':'checking']" v-for="item in storeList" v-if="item.visible" @click="clickDownload(item.url)">
+        <svg class="logo" v-if="item.isSvg" aria-hidden="true" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <path fill="none" d="M0,0h40v40H0V0z"></path>
+          <g>
+            <path d="M19.7,19.2L4.3,35.3c0,0,0,0,0,0c0.5,1.7,2.1,3,4,3c0.8,0,1.5-0.2,2.1-0.6l0,0l17.4-9.9L19.7,19.2z" fill="#EA4335"></path>
+            <path d="M35.3,16.4L35.3,16.4l-7.5-4.3l-8.4,7.4l8.5,8.3l7.5-4.2c1.3-0.7,2.2-2.1,2.2-3.6C37.5,18.5,36.6,17.1,35.3,16.4z" fill="#FBBC04"></path>
+            <path d="M4.3,4.7C4.2,5,4.2,5.4,4.2,5.8v28.5c0,0.4,0,0.7,0.1,1.1l16-15.7L4.3,4.7z" fill="#4285F4"></path>
+            <path d="M19.8,20l8-7.9L10.5,2.3C9.9,1.9,9.1,1.7,8.3,1.7c-1.9,0-3.6,1.3-4,3c0,0,0,0,0,0L19.8,20z" fill="#34A853"></path>
+          </g>
+        </svg>
+        <img class="logo" v-else :src="item.img" :alt="isEn?item.nameEn:item.name">
+        {{isEn?item.nameEn:item.name}}{{item.ok ? '' : (isEn?'(Uploading)':'(审核中)')}}
+      </div>
+    </section>
+  </div>
+  <div class="footer">
+    <div class="author" v-html="getFooterHtml(config.postCreator, isEn)"></div>
+  </div>
+</div>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>

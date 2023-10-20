@@ -1,0 +1,58 @@
+@import "../../../../css/mixin";
+
+$back-arrow_size: 18px;
+
+.btn-back {
+  cursor: pointer;
+  @include flex(row, start, center);
+  padding: 0 $padding-horizontal;
+  @include flex-shrink(0);
+
+  &.black {
+    background-color: $color-white;
+  }
+
+  &.white {
+    background-color: $color-primary;
+  }
+
+  &.blue {
+    background-color: $color-white;
+  }
+
+  .ic-back {
+    width: $back-arrow_size;
+    height: $back-arrow_size;
+    margin-left: -4px;
+
+    &.black {
+      fill: $font-color-dark;
+      background-color: $color-white;
+    }
+
+    &.white {
+      fill: $font-color-white;
+      background-color: $color-primary;
+    }
+
+    &.blue {
+      fill: $color-primary;
+      background-color: $color-white;
+    }
+  }
+
+  span {
+
+    &.black {
+      color: $font-color-dark !important;
+    }
+
+    &.white {
+      color: $font-color-white;
+    }
+
+    &.blue {
+      color: $color-primary;
+    }
+  }
+}

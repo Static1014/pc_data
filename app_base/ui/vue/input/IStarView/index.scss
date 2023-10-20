@@ -1,0 +1,63 @@
+@import "../../../../css/mixin";
+
+$height-star: 35px;
+$size-star: 24px;
+
+$height-star-small: $font-size-base;
+$size-star-small: $font-size-base;
+
+.star-view {
+  height: $height-star;
+
+  position: relative;
+  @include flex(row, start);
+
+  &.small {
+    height: $height-star-small;
+    @include flex(row, end);
+  }
+
+  .label {
+    font-size: $font-size-base;
+    color: $font-color-dark;
+    margin-right: 4px;
+  }
+
+  .star {
+    position: relative;
+    width: $height-star;
+    height: $height-star;
+    line-height: $height-star;
+
+    &.small {
+      width: $height-star-small;
+      height: $height-star-small;
+      line-height: $height-star-small;
+      margin-left: 4px;
+    }
+
+    .star-svg {
+      position: relative;
+      @include transform-center;
+      width: $size-star;
+      height: $size-star;
+
+      &.small {
+        width: $size-star-small;
+        height: $size-star-small;
+      }
+
+      &.off {
+        fill: $font-color-unable;
+      }
+
+      &.on {
+        fill: $font-color-important;
+      }
+
+      &.unable {
+        fill: $font-color-unable;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import "../../../../css/mixin";
+
+.i-checkbox {
+  @include flex(row, start);
+  min-height: $size-checkbox;
+  min-width: $size-checkbox;
+
+  .cb-icon {
+    height: $size-checkbox;
+    width: $size-checkbox;
+    @include flex-shrink(0);
+    @include bg-size($size-checkbox);
+    @include bg-image(url("../../../../assets/img/cb_off.png"));
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &.on {
+      @include bg-image(url("../../../../assets/img/cb_on.png"));
+    }
+  }
+
+  .cb-label {
+    margin-left: 4px;
+    min-height: $size-checkbox;
+    font-size: $font-size-base;
+    color: $font-color-dark;
+    line-height: $size-checkbox;
+
+    &.unable {
+      color: $font-color-unable;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#f2f2f2">
+  <link rel="shortcut icon" href="../assets/img/favicon.ico">
+  <title>隐私政策</title>
+  <script type="text/javascript" src="../../config/config.js"></script>
+  <link rel="stylesheet" href="../../app_base/css/reset.css">
+  <link rel="stylesheet" href="../../app_base/css/style.css">
+  <link rel="stylesheet" href="index.css">
+  <script type="text/javascript" src="../../app_base/libs/jquery.min.js"></script>
+  <script type="text/javascript" src="../../app_base/libs/vue.min.js"></script>
+  <script type="text/javascript" src="../../app_base/js/app_config.js"></script>
+  <script type="text/javascript" src="../../app_base/js/commonUtils.js"></script>
+</head>
+
+<body>
+<div class="container" id="vue_id" v-cloak>
+  <div class="content">
+    <h2>{{isEn ? lang.en.title : lang.zh.title}}</h2>
+    <div class="lang" @click="clickLang">
+      <span :class="['zh', isEn?'':'selected']">中文</span> / <span :class="['en', isEn?'selected':'']">English</span>
+    </div>
+    <div class='divContent' v-html="contentHtml"></div>
+  </div>
+</div>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
+

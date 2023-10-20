@@ -1,0 +1,67 @@
+@keyframes collapseAnim {
+  0% {
+    width: 100%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 0; } }
+@-webkit-keyframes collapseAnim {
+  0% {
+    width: 100%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 0; } }
+@keyframes circle {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+@-webkit-keyframes circle {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+.btn-back {
+  cursor: pointer;
+  display: flex;
+  display: -webkit-flex;
+  display: -o-flex;
+  display: -ms-flex;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  justify-content: start;
+  -webkit-justify-content: flex-start;
+  align-items: center;
+  -webkit-align-items: center;
+  padding: 0 10px;
+  flex-shrink: 0;
+  -webkit-flex-shrink: 0; }
+  .btn-back.black {
+    background-color: #ffffff; }
+  .btn-back.white {
+    background-color: #168DE9; }
+  .btn-back.blue {
+    background-color: #ffffff; }
+  .btn-back .ic-back {
+    width: 18px;
+    height: 18px;
+    margin-left: -4px; }
+    .btn-back .ic-back.black {
+      fill: #333333;
+      background-color: #ffffff; }
+    .btn-back .ic-back.white {
+      fill: #ffffff;
+      background-color: #168DE9; }
+    .btn-back .ic-back.blue {
+      fill: #168DE9;
+      background-color: #ffffff; }
+  .btn-back span.black {
+    color: #333333 !important; }
+  .btn-back span.white {
+    color: #ffffff; }
+  .btn-back span.blue {
+    color: #168DE9; }
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,119 @@
+@import "../app_base/css/mixin";
+
+$cc1: #4BBCF4;
+$cc2: #61C0BF;
+$cc3: #BBDED6;
+$cc4: #FFB6B9;
+$cc5: #fae3d9;
+$cc6: #c7bde3;
+
+html {
+  background: linear-gradient($cc2, $cc3) fixed;
+
+  body {
+    overflow: hidden;
+    background: none;
+
+    .container {
+      background: none;
+      width: 100%;
+      display: block;
+
+      .content {
+        background: none;
+
+        section {
+          text-align: center;
+
+          #logo {
+            width: 60px;
+          }
+
+          &#top {
+
+            h1 {
+              color: $font-color-white;
+              text-align: center;
+            }
+
+            .lang {
+              color: $font-color-sub;
+              cursor: pointer;
+              padding: 10px 0 6px;
+
+              .zh, .en {
+                font-size: $font-size-small;
+
+                &.selected {
+                  color: $color-red;
+                  font-weight: bold;
+                }
+              }
+            }
+
+            .policy {
+              color: $cc5;
+              padding: 10px 0 4px;
+              cursor: pointer;
+            }
+          }
+
+          &#box-intro {
+            width: 100%;
+            padding: 0;
+            overflow-x: scroll;
+
+            .intro {
+              @include flex;
+
+              img {
+                object-fit: contain;
+                width: 300px;
+                margin-right: 10px;
+              }
+            }
+          }
+
+          &#download {
+            h3 {
+              color: $font-color-white;
+            }
+
+            .btn_download {
+              @include flex(row, start, center);
+              color: $font-color-normal;
+              @include border-radius;
+              text-align: end;
+              border: none;
+              cursor: pointer;
+              min-height: $btn-height;
+              padding: 4px 8px;
+              min-width: $btn-min-width;
+              background-color: $color-white !important;
+              margin-bottom: 12px;
+
+              &.checking {
+                //  审核中
+                background-color: $color-unable !important;
+                color: $font-color-sub;
+              }
+
+              .logo {
+                width: 24px;
+                height: 24px;
+                margin-right: 8px;
+              }
+            }
+          }
+        }
+      }
+
+      .footer {
+        background: none;
+        color: $font-color-unable;
+        font-size: 12px;
+        margin-top: 30px;
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+@keyframes collapseAnim {
+  0% {
+    width: 100%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 0; } }
+@-webkit-keyframes collapseAnim {
+  0% {
+    width: 100%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 0; } }
+@keyframes circle {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+@-webkit-keyframes circle {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+html {
+  background: linear-gradient(#61C0BF, #BBDED6) fixed; }
+  html body {
+    overflow: hidden;
+    background: none; }
+    html body .container {
+      background: none;
+      width: 100%;
+      display: block; }
+      html body .container .content {
+        background: none; }
+        html body .container .content section {
+          text-align: center; }
+          html body .container .content section #logo {
+            width: 60px; }
+          html body .container .content section#top h1 {
+            color: #ffffff;
+            text-align: center; }
+          html body .container .content section#top .lang {
+            color: #999999;
+            cursor: pointer;
+            padding: 10px 0 6px; }
+            html body .container .content section#top .lang .zh, html body .container .content section#top .lang .en {
+              font-size: 13px; }
+              html body .container .content section#top .lang .zh.selected, html body .container .content section#top .lang .en.selected {
+                color: #de6161;
+                font-weight: bold; }
+          html body .container .content section#top .policy {
+            color: #fae3d9;
+            padding: 10px 0 4px;
+            cursor: pointer; }
+          html body .container .content section#box-intro {
+            width: 100%;
+            padding: 0;
+            overflow-x: scroll; }
+            html body .container .content section#box-intro .intro {
+              display: flex;
+              display: -webkit-flex;
+              display: -o-flex;
+              display: -ms-flex;
+              flex-direction: row;
+              -ms-flex-direction: row;
+              -webkit-flex-direction: row;
+              justify-content: space-between;
+              -webkit-justify-content: space-between;
+              align-items: center;
+              -webkit-align-items: center; }
+              html body .container .content section#box-intro .intro img {
+                object-fit: contain;
+                width: 300px;
+                margin-right: 10px; }
+          html body .container .content section#download h3 {
+            color: #ffffff; }
+          html body .container .content section#download .btn_download {
+            display: flex;
+            display: -webkit-flex;
+            display: -o-flex;
+            display: -ms-flex;
+            flex-direction: row;
+            -ms-flex-direction: row;
+            -webkit-flex-direction: row;
+            justify-content: start;
+            -webkit-justify-content: flex-start;
+            align-items: center;
+            -webkit-align-items: center;
+            color: #666666;
+            border-radius: 4px;
+            border: 1px solid #d5d5d5;
+            text-align: end;
+            border: none;
+            cursor: pointer;
+            min-height: 37px;
+            padding: 4px 8px;
+            min-width: 90px;
+            background-color: #ffffff !important;
+            margin-bottom: 12px; }
+            html body .container .content section#download .btn_download.checking {
+              background-color: #e2e2e2 !important;
+              color: #999999; }
+            html body .container .content section#download .btn_download .logo {
+              width: 24px;
+              height: 24px;
+              margin-right: 8px; }
+      html body .container .footer {
+        background: none;
+        color: #bbbbbb;
+        font-size: 12px;
+        margin-top: 30px; }
+
+/*# sourceMappingURL=index.css.map */

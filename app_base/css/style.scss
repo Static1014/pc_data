@@ -1,0 +1,870 @@
+@import "variable";
+@import "mixin";
+@import "functions";
+
+* {
+  padding: 0;
+  margin: 0;
+  //@include disable_select;
+  word-break: break-all;
+  box-sizing: border-box;
+  // 去除点击按下效果
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+// vue防止屏闪和显示vue源码
+[v-cloak] {
+  display: none;
+}
+
+html {
+  body {
+    font-size: $font-size-base;
+    width: 100vw;
+    height: 100vh;
+    background: $color-bg;
+    font-family: Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+
+    .container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      .header {
+        @include flex;
+
+        position: relative;
+        height: $height-header;
+        width: 100%;
+        line-height: $height-header;
+
+
+        $back-arrow_size: 14px;
+
+        .h-left {
+          position: relative;
+          width: calc(15% - #{$back-arrow_size});
+          padding-left: $back-arrow_size;
+          @include flex-shrink(0);
+        }
+
+        .l-back {
+          font-size: $font-size-small;
+          background-image: url("../../app_base/assets/img/ic_back.png");
+          background-repeat: no-repeat;
+          background-position-x: 2px;
+          background-position-y: center;
+          background-size: $back-arrow_size;
+        }
+
+        .h-title {
+          display: inline-block;
+          text-align: center;
+          font-size: $font-size-large;
+          font-weight: bold;
+          @include single-line-text;
+          @include flex-grow(1);
+        }
+
+        .h-right {
+          @include flex-shrink(0);
+          position: relative;
+          width: 15%;
+        }
+      }
+
+      .h-bg-blue {
+        background: if(true, $color-blue, $color-white);
+        color: if(true, $font-color-white, $font-color-important);
+      }
+
+      .h-bg-white {
+        background: if(false, $color-blue, $color-white);
+        color: if(false, $font-color-white, $font-color-important);
+      }
+
+      .title {
+        text-align: center;
+        font-size: $font-size-large;
+        line-height: $height-header;
+        font-weight: bold;
+      }
+
+      .content {
+        width: 100%;
+        margin: 0 auto;
+
+        section {
+          margin-top: $height-divider;
+          //border-top: $height-divider solid $color-bg;
+          padding: $padding-vertical $padding-horizontal;
+          background: $color-white;
+
+          .s-header {
+            line-height: 1;
+            font-size: $font-size-base;
+            font-weight: bold;
+            color: $font-color-dark;
+            @include flex;
+            margin-bottom: 8px;
+          }
+        }
+      }
+
+      .footer {
+        width: 100%;
+        min-height: $height-footer;
+        @include flex(row, center);
+        background: $color-white;
+
+        &.align-bottom {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
+      }
+    }
+
+    // flex justify-content：space-evenly 在部分移动设备上不起作用的解决办法
+    .flex-evenly {
+      justify-content: space-between !important;
+
+      &:before, &:after {
+        content: "";
+        display: block;
+      }
+    }
+
+    a {
+      text-decoration: none;
+
+      &:link, &:visited, &:hover, &:active {
+        color: $font-color-important;
+      }
+    }
+
+    table {
+      border-collapse: collapse;
+
+      th, td {
+        @include border;
+      }
+    }
+
+    .invisible {
+      display: none;
+    }
+
+    // 单行文字末尾缺省
+    .single-line-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    // 去除输入框、下拉默认样式
+    input, select, textarea {
+      @include no-appearance;
+      //@include enable_select;
+      text-decoration: none;
+      border: none;
+      background: none;
+      outline: none;
+
+      &::placeholder {
+        color: $font-color-unable;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:disabled {
+        color: $font-color-unable;
+        // 苹果手机上，要设置input不可用时的颜色，必须同时加上下面两条
+        opacity: 1;
+        -webkit-text-fill-color: $font-color-unable !important;
+      }
+    }
+
+    // 设置下拉选择框默认三角
+    select {
+      @include no-appearance;
+      font-size: 1em;
+      color: $font-color-dark;
+      padding-right: 16px;
+      background-image: url("../../app_base/assets/img/arrow_down.png");
+      background-repeat: no-repeat;
+      background-position: 99% center;
+      background-size: 10px;
+      width: 100%;
+      @include single-line-text;
+    }
+
+    // 默认多选框样式
+    input[type='checkbox'] {
+      @include no-appearance;
+      width: $size-checkbox;
+      height: $size-checkbox;
+      @include flex-shrink(0);
+      background: url("../../app_base/assets/img/cb_off.png") no-repeat center;
+      background-size: 100%;
+
+      &:checked {
+        @include flex-shrink(0);
+        background: url("../../app_base/assets/img/cb_on.png") no-repeat center;
+        background-size: 100%;
+      }
+    }
+
+    // 默认日期选择器
+    input[type='date'] {
+      @include no-appearance;
+      font-size: 1em;
+      color: $font-color-dark;
+      background-image: url("../../app_base/assets/img/ic_date.png");
+      background-repeat: no-repeat;
+      background-position: 99% center;
+      background-size: 14px;
+      width: 100%;
+      min-height: 1em;
+      display: inline-block;
+      @include single-line-text;
+    }
+
+    // 开启序列前的序号
+    ol {
+      list-style: decimal inside;
+    }
+
+    .list-item {
+      padding-top: $padding-vertical;
+      padding-bottom: $padding-vertical;
+      border-bottom: 0.5px solid $color-divider-line;
+
+      &.first {
+        padding-top: 0;
+      }
+
+      &.last {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
+
+    // 按钮
+    .btn {
+      box-sizing: border-box;
+      display: inline-block;
+      @include border-radius;
+      border: none;
+      cursor: pointer;
+      background: $color-primary;
+      color: $font-color-white;
+      font-size: $font-size-btn;
+      text-align: center;
+      min-height: $btn-height;
+      line-height: $btn-height;
+      padding: 0 8px;
+      min-width: $btn-min-width;
+
+      // 文字按钮 class='btn text'
+      &.text {
+        background: none;
+        color: $font-color-important;
+        border: none !important;
+      }
+
+      // 白底+圆角边框
+      &.empty {
+        @include border;
+        background: $color-white;
+        color: $font-color-normal;
+      }
+
+      // 取消最小宽度
+      &.min-width {
+        min-width: 0 !important;
+      }
+
+      // 高度较低的按钮
+      &.low {
+        height: $btn-height-low;
+        line-height: $btn-height-low;
+      }
+
+      &.small {
+        min-width: 0 !important;
+        height: $btn-height-low;
+        line-height: $btn-height-low;
+      }
+
+      &.bg-orange {
+        background: $color-orange !important;
+      }
+
+      &.bg-green {
+        background: $color-green !important;
+      }
+
+      &.bg-red {
+        background: $color-red !important;
+      }
+
+      &.unable {
+        background: $color-unable !important;
+        color: $font-color-unable !important;
+        cursor: default;
+      }
+    }
+
+    // 通用toast
+    .toast-default-span {
+      position: fixed;
+      max-width: $toast-max-width;
+      @include transform-center-x;
+      border-radius: 6px;
+      cursor: pointer;
+
+      padding: 10px $padding-horizontal;
+      z-index: $z-index-toast;
+      text-align: center;
+      font-size: $font-size-base;
+      background: $color-white;
+      color: $font-color-dark;
+      line-height: 1.2em;
+    }
+
+    // 原型浮动按钮
+    #fb {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: $color-primary;
+      color: $color-white;
+      cursor: pointer;
+
+      img {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        @include transform-center;
+      }
+    }
+
+    // 全局logView，手机上模拟console
+    #log_view {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 90%;
+      z-index: $z-index-log;
+      background: $color-bg;
+
+      @include flex(column, start, start);
+
+      .log-actions {
+        width: 100%;
+        padding: 4px 8px;
+        @include flex(row);
+
+        .log-title {
+          color: $font-color-dark;
+          font-weight: bold;
+          font-size: $font-size-large;
+        }
+      }
+
+      #log_content {
+        overflow-y: scroll;
+        padding: 8px 2px 20px;
+
+        .log-item {
+          font-size: 10px;
+          line-height: 1.2;
+          padding: 2px;
+          border-bottom: line($color-border, 1px, solid);
+
+          &.e {
+            color: $color-red;
+          }
+
+          &.i {
+            color: $color-green;
+          }
+
+          &.w {
+            color: $color-yellow;
+          }
+
+          &.crash {
+            color: $color-orange;
+            font-style: italic;
+          }
+        }
+      }
+    }
+
+    // 全局“加载中”样式
+    #g-pb {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: $z-index-loading;
+      top: 0;
+      left: 0;
+      background: $color-bg-transparent;
+      text-align: center;
+
+      @-webkit-keyframes circle {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(-360deg)
+        }
+      }
+
+      // 内容区
+      .pb-content {
+        @include border-radius(8px, $color-transparent, 1px);
+        background: $color-black-3;
+        width: 32vw;
+        //min-width: 32vw;
+        //max-width: 80vw;
+        min-height: 32vw;
+        position: absolute;
+        @include transform-center;
+        @include flex(column, center);
+        padding: 8px;
+
+        // 转圈
+        .pb-loading {
+          height: 36px;
+          width: 36px;
+          @include loadingAndroid;
+        }
+
+        // 文字显示区
+        .pb-text {
+          margin-top: 10px;
+          color: $font-color-white;
+          font-size: $font-size-small;
+          text-align: center;
+          line-height: 1.2em;
+          padding: 4px;
+        }
+      }
+    }
+
+
+    .m-dialog-cover {
+      z-index: $z-index-dialog;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: $color-bg-transparent;
+      // 去除背景改变动画，防止多个dialog背景切换时闪屏
+      //@include transition(background 0.3s);
+      @include flex(row, center);
+
+      .d-content {
+        @include overflow-scroll;
+        border-radius: 8px;
+
+        width: 80%;
+        min-height: 10%;
+        max-height: 90%;
+        background: white;
+        padding: 20px 20px 10px;
+        @include box-shadow();
+
+        position: relative;
+        //@include transform-center;
+
+        .d-close {
+          position: absolute;
+          width: $btn-height;
+          height: $btn-height;
+          top: 10px;
+          right: 10px;
+          background: url("../assets/img/close.png") center no-repeat;
+          background-size: 24px;
+          cursor: pointer;
+        }
+
+        .d-title {
+          color: $font-color-dark;
+          font-size: $font-size-large;
+          font-weight: bold;
+          margin-bottom: $margin-vertical;
+        }
+
+        .msg {
+          font-size: $font-size-base;
+          line-height: 1.4em;
+          color: $font-color-normal;
+
+          &.dark {
+            color: $font-color-dark;
+          }
+
+          &.scroll {
+            overflow-y: scroll;
+            max-height: 500px;
+          }
+        }
+
+        .d-actions {
+          margin-top: $margin-vertical;
+          @include flex(row, end);
+          height: 40px;
+          font-size: $font-size-btn;
+          font-weight: bold;
+
+          .btn-dialog-left {
+            color: $font-color-dark;
+            padding: 0 2px;
+            min-width: 0;
+            cursor: pointer;
+            margin-right: 14px;
+          }
+
+          .btn-dialog-right {
+            color: $font-color-important;
+            padding: 0 2px;
+            min-width: 0;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .dialog-init {
+      display: none;
+    }
+
+    .tip {
+      padding: 4px 0;
+      color: $color-error;
+      line-height: 1.2em;
+      font-size: 0.9em;
+      width: 100%;
+      direction: ltr;
+
+      li {
+        margin-top: 4px;
+      }
+    }
+
+    .i-container {
+      position: relative;
+      min-height: $min-height-input;
+      margin: 10px 0 0;
+      @include flex(row, start);
+      @include border;
+      border-radius: 2px;
+      background: $color-bg-input;
+      color: $font-color-dark;
+      padding: 5px 10px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &.multi-line {
+        @include align-items(start);
+        min-height: $min-height-input*2
+      }
+
+      .i-label {
+        width: $label-width;
+        @include flex-shrink(0);
+        line-height: 1.2;
+        font-size: $font-size-base;
+
+        &.small {
+          width: $label-width-min;
+        }
+
+        &.i-must {
+          &::before {
+            content: "*";
+            display: inline;
+            color: $color-error;
+            font-size: 1em;
+          }
+        }
+      }
+
+      .i-value {
+        display: block;
+        position: relative;
+        margin-left: 10px;
+        @include flex-grow(1);
+        overflow: hidden;
+        line-height: 1.2;
+      }
+
+      input, select, textarea {
+        display: block;
+        font-size: $font-size-base;
+        color: $font-color-dark;
+        resize: none;
+        min-height: $min-height-input;
+      }
+
+      textarea:disabled {
+        color: $font-color-unable;
+      }
+
+      input[type='date'] {
+        padding-right: 20px;
+        @include flex; // 让日期上下居中
+      }
+
+      $count-size: 11px;
+
+      .leave-count {
+        margin-bottom: $count-size;
+      }
+
+      .count {
+        position: absolute;
+        right: 4px;
+        bottom: 4px;
+        font-size: $count-size;
+        color: $font-color-unable;
+      }
+    }
+
+    .l-container {
+      position: relative;
+      min-height: 16px;
+      @include flex(row, space-between, start);
+      line-height: 1.1em;
+      padding: 2px 0;
+
+      .l-label {
+        width: auto;
+        max-width: $label-width;
+        @include flex-shrink(0);
+        font-size: $font-size-base;
+        line-height: 1.2;
+        color: $font-color-dark;
+
+        &::after {
+          content: ':';
+          font-size: $font-size-base;
+          color: $font-color-dark;
+        }
+      }
+
+      .l-value {
+        text-align: end;
+        display: block;
+        position: relative;
+        margin-left: 10px;
+        @include flex-grow(1);
+        overflow: hidden;
+        font-size: $font-size-base;
+        line-height: 1.2;
+        color: $font-color-normal;
+      }
+    }
+
+    // 字体红色
+    .color-normal {
+      color: $font-color-normal !important;
+    }
+
+    .color-error, .color-red {
+      color: $color-red !important;
+    }
+
+    .color-info, .color-green {
+      color: $color-green !important;
+    }
+
+    .color-help, .color-orange {
+      color: $color-orange !important;
+    }
+
+    // 段落空两格
+    .indent {
+      @include indent;
+    }
+
+    // 文字靠右
+    .align-right {
+      text-align: end;
+    }
+
+    .align-center {
+      text-align: center;
+    }
+
+    // 电话字体颜色
+    .phone, .color-important, .color-blue {
+      color: $font-color-important !important;
+    }
+
+    .readonly {
+      color: $font-color-unable !important;
+      cursor: default !important;
+    }
+
+    .color-unable {
+      color: $font-color-unable !important;
+    }
+
+    // 必填项签名加红色星号
+    .i-must {
+      &::before {
+        content: "*";
+        display: inline;
+        color: $color-error;
+        font-size: 1em;
+      }
+    }
+
+    // 点击查看帮助样式
+    .l-help {
+      text-decoration: underline;
+      text-underline-color: $color-orange;
+      color: $color-orange !important;
+      font-style: italic;
+
+      &::after {
+        content: "?";
+        display: inline;
+        font-size: 1em;
+      }
+    }
+
+    .no-border {
+      border: none !important;;
+    }
+
+    .no-padding {
+      padding: 0 !important;
+    }
+
+    .no-margin {
+      margin: 0 !important;
+    }
+
+    .btn-smallest {
+      min-width: 0 !important;
+    }
+
+    .dash-line {
+      border-bottom: 1px dashed $color-divider-line;
+    }
+
+    .line {
+      height: 0.5px;
+      width: 100%;
+      background: $color-border;
+    }
+
+    // vue slide动画
+    // 示例：
+    // <div style="overflow: hidden">
+    //   <transition name="slide">
+    //     <div v-show="show">
+    //     </div>
+    //   </transition>
+    // </div>
+    .slide-enter-active, .slide-leave-active {
+      @include transition(all .3s);
+    }
+
+    .slide-enter, .slide-leave-to {
+      @include transform(translateY(-100%));
+      opacity: 0;
+    }
+
+    .fade-enter-active, .fade-leave-active {
+      @include transition(all .3s);
+    }
+
+    .fade-enter, .fade-leave-to {
+      opacity: 0;
+    }
+
+    .page-left-in-enter-active, .page-left-in-leave-active {
+      @include transition(all .3s);
+    }
+
+    .page-left-in-enter {
+      @include transform(translateX(-100%));
+      opacity: 0;
+    }
+
+    .page-left-in-leave-to {
+      @include transform(translateX(100%));
+      opacity: 0;
+    }
+
+    .page-right-in-enter-active, .page-right-in-leave-active {
+      @include transition(all .3s);
+    }
+
+    .page-right-in-enter {
+      @include transform(translateX(100%));
+      opacity: 0;
+    }
+
+    .page-right-in-leave-to {
+      @include transform(translateX(-100%));
+      opacity: 0;
+    }
+  }
+}
+
+//.i-radio {
+//  outline: none;
+//  @include no-appearance;
+//
+//  &::before {
+//    content: '';
+//    width: 1em;
+//    height: 1em;
+//    @include border-radius(50%, $font-color-normal, 1px);
+//    display: block;
+//    position: relative;
+//    @include transform-center;
+//  }
+//
+//  &:checked {
+//    &::before {
+//      content: '';
+//      width: 1em;
+//      height: 1em;
+//      @include border-radius(50%, $color-green, 1px);
+//      display: block;
+//      position: relative;
+//      @include transform-center;
+//    }
+//
+//    &::after {
+//      content: '';
+//      width: 0.8em;
+//      height: 0.8em;
+//      text-align: center;
+//      background: $color-green;
+//      border-radius: 50%;
+//      display: block;
+//      position: relative;
+//      @include transform-center;
+//    }
+//  }
+//}

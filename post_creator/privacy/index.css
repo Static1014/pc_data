@@ -1,0 +1,46 @@
+@keyframes collapseAnim {
+  0% {
+    width: 100%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 0; } }
+@-webkit-keyframes collapseAnim {
+  0% {
+    width: 100%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 0; } }
+@keyframes circle {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+@-webkit-keyframes circle {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+html body .container .content {
+  padding: 12px; }
+  html body .container .content h2 {
+    padding: 15px 0;
+    text-align: center; }
+  html body .container .content .lang {
+    text-align: center;
+    color: #999999;
+    cursor: pointer;
+    padding: 4px 0 15px; }
+    html body .container .content .lang .zh, html body .container .content .lang .en {
+      font-size: 13px; }
+      html body .container .content .lang .zh.selected, html body .container .content .lang .en.selected {
+        color: #de6161;
+        font-weight: bold; }
+  html body .container .content h3 {
+    margin: 12px 0; }
+  html body .container .content p, html body .container .content li {
+    text-indent: 2em;
+    line-height: 1.3; }
+
+/*# sourceMappingURL=index.css.map */

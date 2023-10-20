@@ -1,0 +1,60 @@
+@import "../../../css/mixin";
+
+$height-tab-small: 32px;
+
+.tab-layout {
+  @include flex(row, start, center);
+  height: $height-tab;
+  background: $color-white;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  &.small {
+    height: $height-tab-small;
+  }
+
+  // 隐藏滚动条
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-item {
+    position: relative;
+    @include flex-shrink(0);
+    display: inline-block;
+    height: 100%;
+    line-height: $height-tab;
+    padding: 0 12px;
+    cursor: pointer;
+
+    font-size: $font-size-btn;
+    color: $font-color-normal;
+
+    &.small {
+      line-height: $height-tab-small;
+      padding: 0 6px;
+    }
+
+    &.selected {
+      color: $font-color-dark;
+      font-weight: bold;
+      font-size: $font-size-btn+1px;
+    }
+
+    .tab-count {
+      box-sizing: border-box;
+      position: absolute;
+      right: 2px;
+      top: 6px;
+      width: auto;
+      height: 14px;
+      min-width: 14px;
+      line-height: 14px;
+      background: $color-red;
+      color: $font-color-white;
+      font-size: 10px;
+      border-radius: 50%;
+      text-align: center;
+    }
+  }
+}

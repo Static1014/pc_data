@@ -1,0 +1,103 @@
+@keyframes collapseAnim {
+  0% {
+    width: 100%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 0; } }
+@-webkit-keyframes collapseAnim {
+  0% {
+    width: 100%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 0; } }
+@keyframes circle {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+@-webkit-keyframes circle {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+.i-select {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  display: -webkit-flex;
+  display: -o-flex;
+  display: -ms-flex;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  justify-content: start;
+  -webkit-justify-content: flex-start;
+  align-items: center;
+  -webkit-align-items: center;
+  min-height: 35px;
+  width: 100%;
+  padding-right: 16px;
+  background-image: url("../../../../assets/img/arrow_down.png");
+  background-repeat: no-repeat;
+  background-position: 99% center;
+  background-size: 10px;
+  cursor: pointer; }
+  .i-select.unable {
+    cursor: default; }
+  .i-select .i-selected-name {
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+    display: block;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #333333; }
+    .i-select .i-selected-name.single-line {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    .i-select .i-selected-name.placeholder {
+      color: #bbbbbb; }
+    .i-select .i-selected-name.unable {
+      color: #bbbbbb; }
+  .i-select .i-options-dialog-cover {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9969;
+    background: #00000000;
+    cursor: default; }
+    .i-select .i-options-dialog-cover .i-options-list {
+      position: absolute;
+      background: #ffffff;
+      max-height: 150px;
+      overflow-y: scroll;
+      border: 1px solid #dd8352; }
+      .i-select .i-options-dialog-cover .i-options-list .item-option {
+        padding: 4px;
+        min-height: 30px;
+        min-width: 80px;
+        background: #ffffff;
+        font-size: 14px;
+        color: #333333;
+        display: flex;
+        display: -webkit-flex;
+        display: -o-flex;
+        display: -ms-flex;
+        flex-direction: row;
+        -ms-flex-direction: row;
+        -webkit-flex-direction: row;
+        justify-content: start;
+        -webkit-justify-content: flex-start;
+        align-items: center;
+        -webkit-align-items: center;
+        cursor: pointer; }
+        .i-select .i-options-dialog-cover .i-options-list .item-option.selected {
+          background: #d0e8fb; }
+        .i-select .i-options-dialog-cover .i-options-list .item-option.unselectable {
+          color: #bbbbbb; }
+
+/*# sourceMappingURL=index.css.map */

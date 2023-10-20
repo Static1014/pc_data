@@ -1,0 +1,28 @@
+@import "../../../css/mixin";
+
+.list-more {
+  display: flex;
+  @include justify-content(space-between);
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  border-top: 0.5px solid $color-border;
+  cursor: pointer;
+
+  &.modify-margin {
+    margin-top: $margin-vertical;
+    margin-bottom: -$margin-vertical;
+  }
+
+  span {
+    color: $font-color-important;
+    font-size: $font-size-base;
+  }
+
+  .ic-more {
+    width: 16px;
+    height: 16px;
+    fill: $font-color-sub;
+    @include transform(rotate(180deg))
+  }
+}

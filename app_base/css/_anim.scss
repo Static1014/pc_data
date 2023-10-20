@@ -1,0 +1,61 @@
+@keyframes collapseAnim {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@-webkit-keyframes collapseAnim {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes circle {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin anim($props) {
+  animation: $props;
+  -webkit-animation: $props;
+  -moz-animation: $props;
+  -o-animation: $props;
+}
+
+// 无限转圈动画
+@mixin circleAnim($anim: circle 2s linear infinite) {
+  @include anim($anim);
+}
+
+// 安卓样式转圈
+@mixin loadingAndroid($color: $color-white, $border-width: 2px) {
+  border: $border-width solid $color;
+  border-right-color: transparent;
+  border-radius: 50%;
+  @include anim(circle 1s infinite linear)
+}

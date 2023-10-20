@@ -1,0 +1,97 @@
+// color
+$color-white:             #ffffff;
+$color-black:             #000000;
+$color-black-3:           #333333;
+$color-gray-9:            #999999;
+$color-cyan:              #62b3bc;
+$color-yellow:            #efb400;
+$color-blue:              #168DE9;
+$color-blue-light:        #5fadf1;
+$color-blue-dark:         #607fe4;
+$color-red:               #de6161;
+$color-orange:            #dd8352;
+$color-cyan-light:        #d0e8fb;
+$color-green:             #4ec87c;
+$color-transparent:       #00000000;
+
+$color-primary:           $color-blue;
+$color-accent:            $color-red;
+
+$color-border:            #d5d5d5;
+$color-divider-line:      #e2e2e2;
+$color-bg:                #f2f2f2;
+$color-bg-transparent:    rgba(0, 0, 0, 0.63);
+$color-unable:            #e2e2e2;
+$color-bg-input:          #f5f5f5;
+$color-bg-input-blue:     #d0e8fb;
+
+
+$font-color-dark:         #333333;
+$font-color-normal:       #666666;
+$font-color-sub:          #999999;
+$font-color-unable:       #bbbbbb;
+$font-color-important:    #168de9;
+$font-color-white:        #ffffff;
+
+
+$color-error:             #f65f5d;
+
+$google-red:              #EA4335;
+$google-green:            #34A853;
+$google-yellow:           #FBBC04;
+$google-blue:             #4285F4;
+
+
+// font size
+// ***  safari中字体小于16px时，点击输入框，页面会放大
+$font-size-large:         32px/2;
+$font-size-base:          28px/2;
+$font-size-small:         26px/2;
+$font-size-btn:           28px/2;
+
+$font-size-h:             $font-size-large;
+
+$base-radius:             4px;
+$base-indent:             2em;
+
+
+// distance
+$margin-horizontal:       10px;
+$margin-vertical:         10px;
+$padding-horizontal:      10px;
+$padding-vertical:        10px;
+$height-divider:          10px;
+
+$btn-height:              37px;
+$btn-height-low:          32px;
+$btn-min-width:           90px;
+
+//默认左侧标签宽度，多给0.3字体是为了防止部分中文字宽度超过1个字体(容错)
+$label-width:             6.3em;
+$label-width-min:         4.3em;
+$min-height-input:        35px;
+
+$size-checkbox:           20px;
+$height-header:           44px;
+$height-tab:              44px;
+$height-footer:           50px;
+$toast-max-width:         90%;
+
+$z-index-toast:           9999;
+$z-index-log:             9998;
+$z-index-loading:         9989;
+$z-index-dialog:          9979;
+$z-index-select-options:  9969;
+$z-index-full-result:     9869;
+$z-index-header:          9759;
+$z-index-footer:          9759;
+
+
+// 三目运算 if(条件, 值1, 值2)
+$is-test:                 false;
+
+$is-header-color-bg:      false;
+
+// tomcat项目名称，
+$project_name:            'WsbsWebProject';
+$is-local-html:           true;

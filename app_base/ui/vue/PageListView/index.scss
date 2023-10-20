@@ -1,0 +1,40 @@
+@import "../../../css/mixin";
+
+$height-list-footer: 40px;
+
+.list-container {
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  .list-content {
+    .list-footer {
+      height: $height-list-footer;
+      @include flex(row, center, center);
+
+      .f-ic-loading {
+        height: $font-size-base;
+        width: $font-size-base;
+        @include loadingAndroid($font-color-sub);
+        margin-right: 8px;
+      }
+
+      .f-text {
+        text-align: center;
+        color: $font-color-sub;
+        font-size: $font-size-base;
+      }
+
+      .f-retry {
+        text-align: center;
+        color: $font-color-sub;
+        font-size: $font-size-base;
+
+        .btn-retry {
+          color: $font-color-important;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

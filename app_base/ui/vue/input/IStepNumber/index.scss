@@ -1,0 +1,56 @@
+@import "../../../../css/mixin";
+
+$height: 22px;
+$btn-width: 26px;
+$count-width: 60px;
+
+.input-number {
+  position: relative;
+  height: $height;
+  display: flex;
+  @include justify-content(end);
+  align-items: center;
+
+  .label {
+    color: $font-color-dark;
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  .action {
+    height: 100%;
+    display: flex;
+    @include justify-content(end);
+    align-items: center;
+    border-radius: 4px;
+    @include border-radius;
+
+    .minus, .add {
+      line-height: $height;
+      text-align: center;
+      width: $btn-width;
+      height: $height;
+      font-size: $font-size-base;
+      cursor: pointer;
+    }
+
+    .count {
+      width: $count-width;
+      text-align: center;
+      line-height: $height;
+      font-size: $font-size-base;
+      border-radius: 0;
+      border-right: 1px solid $color-border;
+      border-left: 1px solid $color-border;
+    }
+
+    .zero {
+      width: $count-width;
+      text-align: center;
+      line-height: $height;
+      font-size: $font-size-base;
+      border-right: 1px solid $color-border;
+      border-left: 1px solid $color-border;
+    }
+  }
+}

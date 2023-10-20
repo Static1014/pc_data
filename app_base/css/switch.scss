@@ -1,0 +1,54 @@
+/* Switch开关样式 */
+@import "mixin";
+
+input[type='checkbox'].switch {
+  outline: none;
+  @include no-appearance;
+
+  $switch-height: 26px;
+  $switch-width: 46px;
+  $padding: 2px;
+  $cycle-size: $switch-height - 2*$padding;
+
+  position: relative;
+  width: $switch-width;
+  height: $switch-height;
+  background: $color-divider-line;
+  border-radius: $switch-height;
+
+  $transition: border-color .3s, background-color .3s;
+  @include transition($transition);
+
+  // 圆球样式
+  &::after {
+    text-align: center;
+    line-height: $cycle-size;
+    content: '';
+    display: inline-block;
+    width: $cycle-size;
+    height: $cycle-size;
+    border-radius: 50%;
+    background: $color-white;
+    box-shadow: 0 0 $padding $color-gray-9;
+
+    transition: .3s;
+    top: $padding;
+    position: absolute;
+    left: $padding;
+  }
+
+
+  &:checked {
+    background: $color-blue;
+
+    /* 当input[type=checkbox]被选中时：伪元素显示下面样式 位置发生变化 */
+    &::after {
+      content: '';
+      position: absolute;
+      left: $switch-width - $switch-height + $padding;
+      top: $padding;
+    }
+  }
+}
+
+

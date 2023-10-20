@@ -1,0 +1,96 @@
+@keyframes collapseAnim {
+  0% {
+    width: 100%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 0; } }
+@-webkit-keyframes collapseAnim {
+  0% {
+    width: 100%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 0; } }
+@keyframes circle {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+@-webkit-keyframes circle {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+.header-container {
+  position: relative;
+  width: 100%;
+  height: 44px;
+  display: flex;
+  display: -webkit-flex;
+  display: -o-flex;
+  display: -ms-flex;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  align-items: center;
+  -webkit-align-items: center;
+  background: #168DE9;
+  color: #ffffff;
+  font-size: 14px; }
+  .header-container .h-left {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    display: -o-flex;
+    display: -ms-flex;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    justify-content: start;
+    -webkit-justify-content: flex-start;
+    align-items: center;
+    -webkit-align-items: center;
+    padding-left: 10px;
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+    cursor: pointer; }
+    .header-container .h-left .ic-back {
+      fill: #ffffff;
+      width: 18px;
+      height: 18px;
+      margin-left: -4px; }
+    .header-container .h-left span {
+      display: inline-block;
+      margin-left: -2px; }
+  .header-container .h-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    flex-grow: 1;
+    -webkit-flex-grow: 1; }
+  .header-container .h-right {
+    width: 15%;
+    height: 100%;
+    padding-right: 10px;
+    display: flex;
+    display: -webkit-flex;
+    display: -o-flex;
+    display: -ms-flex;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    justify-content: end;
+    -webkit-justify-content: flex-end;
+    align-items: center;
+    -webkit-align-items: center;
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0; }
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,169 @@
+@import "variable";
+@import "anim";
+@import "functions";
+
+// 基础边框
+@mixin border($color: $color-border, $width: 1px) {
+  border: $width solid $color;
+}
+
+// 基础圆角
+@mixin border-radius($radius: $base-radius, $color: $color-border, $width: 1px) {
+  border-radius: $radius;
+  @include border($color, $width);
+}
+
+// 基础缩进
+@mixin indent($indent: $base-indent) {
+  text-indent: $indent;
+}
+
+
+// 自定义阴影
+@mixin box-shadow($style: 0 0 3px, $color: $color-gray-9) {
+  -webkit-box-shadow: $style $color;
+  -moz-box-shadow: $style $color;
+  -o-box-shadow: $style $color;
+  box-shadow: $style $color;
+}
+
+// 基础阴影
+@mixin box-shadow-alpha($style: 0 0 3px, $r: 0, $g: 0, $b: 0, $alpha: 0.2) {
+  @include box-shadow($style, rgba($r, $g, $b, $alpha));
+}
+
+// 基础transform
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+// 基础transition (transition: width 2s)
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin transition-property($property) {
+  transition-property: $property;
+  -moz-transition-property: $property;
+  -webkit-transition-property: $property;
+  -o-transition-property: $property;
+}
+
+
+// transform-left 横向居中
+@mixin transform-center-x() {
+  left: 50%;
+  @include transform(translateX(-50%));
+}
+
+// transform-top 垂直居中
+@mixin transform-center-y() {
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+// transform-top-left 居中
+@mixin transform-center() {
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%, -50%));
+}
+
+// 禁止选中
+@mixin disable_select() {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// 允许选中
+@mixin enable_select() {
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+}
+
+// 一行显示
+@mixin single-line-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// 去除样式，select
+@mixin no-appearance {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+// 滚动视图兼容性
+@mixin overflow-scroll {
+  overflow: scroll;
+  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin justify-content($value) {
+  justify-content: $value;
+  -webkit-justify-content: if($value == start, flex-start, if($value == end, flex-end, $value));
+}
+
+@mixin flex-flow($value: nowrap) {
+  flex-flow: $value;
+  -webkit-flex-flow: $value;
+}
+
+@mixin flex-grow($value) {
+  flex-grow: $value;
+  -webkit-flex-grow: $value;
+}
+
+@mixin flex-shrink($value) {
+  flex-shrink: $value;
+  -webkit-flex-shrink: $value;
+}
+
+@mixin align-items($value: center) {
+  align-items: $value;
+  -webkit-align-items: if($value == start, flex-start, if($value == end, flex-end, $value));
+}
+
+@mixin flex-direction($direction: row) {
+  flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  -webkit-flex-direction: $direction;
+}
+
+@mixin flex($direction:row, $justify: space-between, $align: center) {
+  display: flex;
+  display: -webkit-flex;
+  display: -o-flex;
+  display: -ms-flex;
+  @include flex-direction($direction);
+  @include justify-content($justify);
+  @include align-items($align);
+}
+
+@mixin bg-size($size) {
+  background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  -webkit-background-size: $size;
+}
+
+@mixin bg-image($img) {
+  background-image: $img;
+  -moz-background-image: $img;
+  -o-background-image: $img;
+  -webkit-background-image: $img;
+}

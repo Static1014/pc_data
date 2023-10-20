@@ -1,0 +1,48 @@
+@import "../../app_base/css/mixin";
+
+$cc1: #4BBCF4;
+$cc2: #61C0BF;
+$cc3: #BBDED6;
+$cc4: #FFB6B9;
+$cc5: #fae3d9;
+$cc6: #c7bde3;
+
+html {
+  body {
+    .container {
+      .content {
+        padding: 12px;
+
+        h2 {
+          padding: 15px 0;
+          text-align: center;
+        }
+
+        .lang {
+          text-align: center;
+          color: $font-color-sub;
+          cursor: pointer;
+          padding: 4px 0 15px;
+
+          .zh, .en {
+            font-size: $font-size-small;
+
+            &.selected {
+              color: $color-red;
+              font-weight: bold;
+            }
+          }
+        }
+
+        h3 {
+          margin: 12px 0;
+        }
+
+        p, li {
+          text-indent: 2em;
+          line-height: 1.3;
+        }
+      }
+    }
+  }
+}

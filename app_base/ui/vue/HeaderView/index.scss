@@ -1,0 +1,50 @@
+@import "../../../css/mixin";
+
+$back-arrow_size: 18px;
+
+.header-container {
+  position: relative;
+  width: 100%;
+  height: $height-header;
+  @include flex;
+  background: $color-primary;
+  color: $font-color-white;
+  font-size: $font-size-base;
+
+  .h-left {
+    width: 15%;
+    height: 100%;
+    @include flex(row, start, center);
+    padding-left: $padding-horizontal;
+    @include flex-shrink(0);
+    cursor: pointer;
+
+    .ic-back {
+      fill: $color-white;
+      width: $back-arrow_size;
+      height: $back-arrow_size;
+      margin-left: -4px;
+    }
+
+    span {
+      display: inline-block;
+      margin-left: -2px;
+    }
+  }
+
+  .h-title {
+    @include single-line-text;
+    text-align: center;
+    font-size: $font-size-large;
+    font-weight: bold;
+    @include flex-grow(1);
+  }
+
+  .h-right {
+    width: 15%;
+    height: 100%;
+    padding-right: $padding-horizontal;
+    @include flex(row, end, center);
+    @include flex-shrink(0);
+  }
+}

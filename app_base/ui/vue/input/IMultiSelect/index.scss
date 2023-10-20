@@ -1,0 +1,82 @@
+@import "../../../../css/mixin";
+
+$option-min-height: 30px;
+$option-min-width: 80px;
+
+.i-select {
+  position: relative;
+  box-sizing: border-box;
+  @include flex(row, start);
+  min-height: $min-height-input;
+  width: 100%;
+
+  padding-right: 16px;
+  background-image: url("../../../../assets/img/arrow_down.png");
+  background-repeat: no-repeat;
+  background-position: 99% center;
+  background-size: 10px;
+  cursor: pointer;
+
+  &.unable {
+    cursor: default;
+  }
+
+  .i-selected-name {
+    @include flex-grow(1);
+    display: block;
+    font-size: $font-size-base;
+    line-height: 1.2;
+    color: $font-color-dark;
+
+    &.single-line {
+      @include single-line-text;
+    }
+
+    &.placeholder {
+      color: $font-color-unable;
+    }
+
+    &.unable {
+      color: $font-color-unable;
+    }
+  }
+
+  .i-options-dialog-cover {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: $z-index-select-options;
+    background: $color-transparent;
+    cursor: default;
+
+    .i-options-list {
+      position: absolute;
+      background: $color-white;
+      max-height: $option-min-height * 5;
+      overflow-y: scroll;
+      @include border($color-orange);
+
+      .item-option {
+        padding: 4px;
+        //border-bottom: $color-border solid 0.5px;
+        min-height: $option-min-height;
+        min-width: $option-min-width;
+        background: $color-white;
+        font-size: $font-size-base;
+        color: $font-color-dark;
+        @include flex(row, start);
+        cursor: pointer;
+
+        &.selected {
+          background: $color-bg-input-blue;
+        }
+
+        &.unselectable {
+          color: $font-color-unable;
+        }
+      }
+    }
+  }
+}

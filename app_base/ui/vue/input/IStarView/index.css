@@ -1,0 +1,87 @@
+@keyframes collapseAnim {
+  0% {
+    width: 100%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 0; } }
+@-webkit-keyframes collapseAnim {
+  0% {
+    width: 100%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 0; } }
+@keyframes circle {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+@-webkit-keyframes circle {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+.star-view {
+  height: 35px;
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  display: -o-flex;
+  display: -ms-flex;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  justify-content: start;
+  -webkit-justify-content: flex-start;
+  align-items: center;
+  -webkit-align-items: center; }
+  .star-view.small {
+    height: 14px;
+    display: flex;
+    display: -webkit-flex;
+    display: -o-flex;
+    display: -ms-flex;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    justify-content: end;
+    -webkit-justify-content: flex-end;
+    align-items: center;
+    -webkit-align-items: center; }
+  .star-view .label {
+    font-size: 14px;
+    color: #333333;
+    margin-right: 4px; }
+  .star-view .star {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    line-height: 35px; }
+    .star-view .star.small {
+      width: 14px;
+      height: 14px;
+      line-height: 14px;
+      margin-left: 4px; }
+    .star-view .star .star-svg {
+      position: relative;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 24px;
+      height: 24px; }
+      .star-view .star .star-svg.small {
+        width: 14px;
+        height: 14px; }
+      .star-view .star .star-svg.off {
+        fill: #bbbbbb; }
+      .star-view .star .star-svg.on {
+        fill: #168de9; }
+      .star-view .star .star-svg.unable {
+        fill: #bbbbbb; }
+
+/*# sourceMappingURL=index.css.map */

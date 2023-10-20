@@ -1,0 +1,65 @@
+@keyframes collapseAnim {
+  0% {
+    width: 100%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 0; } }
+@-webkit-keyframes collapseAnim {
+  0% {
+    width: 100%; }
+  50% {
+    width: 50%; }
+  100% {
+    width: 0; } }
+@keyframes circle {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+@-webkit-keyframes circle {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+.list-container {
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+  .list-container .list-content .list-footer {
+    height: 40px;
+    display: flex;
+    display: -webkit-flex;
+    display: -o-flex;
+    display: -ms-flex;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center; }
+    .list-container .list-content .list-footer .f-ic-loading {
+      height: 14px;
+      width: 14px;
+      border: 2px solid #999999;
+      border-right-color: transparent;
+      border-radius: 50%;
+      animation: circle 1s infinite linear;
+      -webkit-animation: circle 1s infinite linear;
+      -moz-animation: circle 1s infinite linear;
+      -o-animation: circle 1s infinite linear;
+      margin-right: 8px; }
+    .list-container .list-content .list-footer .f-text {
+      text-align: center;
+      color: #999999;
+      font-size: 14px; }
+    .list-container .list-content .list-footer .f-retry {
+      text-align: center;
+      color: #999999;
+      font-size: 14px; }
+      .list-container .list-content .list-footer .f-retry .btn-retry {
+        color: #168de9;
+        cursor: pointer; }
+
+/*# sourceMappingURL=index.css.map */
