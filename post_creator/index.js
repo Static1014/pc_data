@@ -9,7 +9,7 @@ $(function () {
     el: '#vue_id',
     components: {},
     data: {
-      version: 'v1.0.0',
+      version: 'v1.1.0',
       hideStore: true,
       storeList: [
         {
