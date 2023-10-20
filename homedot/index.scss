@@ -1,0 +1,80 @@
+@import "../app_base/css/mixin";
+
+html {
+  body {
+    background: $color-bg;
+
+    .container {
+      height: 100%;
+      @include flex(column);
+
+      .content {
+        background: $color-bg;
+        @include flex(column, top);
+        padding: 8px;
+        @include flex-grow(1);
+        overflow-y: scroll;
+
+        section {
+          background: none;
+          h1, p {
+            margin-top: 8px;
+            line-height: 1.4;
+          }
+
+          &#ch {
+            @include flex(column, top);
+          }
+
+          &#en {
+          }
+
+          &#jp {
+          }
+        }
+      }
+
+      .footer {
+        @include flex-shrink(0);
+        min-height: 30px;
+        background: $color-bg;
+        color: $font-color-normal;
+        font-size: $font-size-small;
+        padding: 4px;
+
+        .author {
+          @include flex(row, center, center);
+          color: $font-color-normal;
+          line-height: 1.4;
+          text-align: center;
+          flex-wrap: wrap;
+
+          a {
+            &:link, &:visited, &:hover, &:active {
+              color: $font-color-normal;
+            }
+          }
+
+          * {
+            @include flex-shrink(0);
+          }
+
+          #ga {
+            @include flex;
+          }
+
+          @media screen and (max-width: 600px) {
+            span {
+              width: 100%;
+            }
+          }
+
+          img {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+}
