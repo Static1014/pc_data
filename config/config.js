@@ -3,6 +3,9 @@ const config = {
   author: 'Static4u',
   authorEn: 'Static4u',
   email: '420048248@qq.com',
+  pc: {
+    site: 'https://static1014.github.io/pc_data/post_creator/'
+  },
 }
 
 /**
