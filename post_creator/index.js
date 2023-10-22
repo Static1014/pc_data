@@ -10,7 +10,7 @@ $(function () {
     components: {},
     data: {
       version: 'v1.1.0',
-      hideStore: true,
+      hideStore: false,
       storeList: [
         {
           visible: false, // 是否显示
